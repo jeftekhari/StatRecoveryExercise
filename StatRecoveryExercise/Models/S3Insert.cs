@@ -1,9 +1,13 @@
-﻿using Amazon.S3;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
+//Amazon S3
+using Amazon.S3;
+using Amazon.S3.Model;
+
 
 namespace StatRecoveryExercise.Models
 {
@@ -13,8 +17,6 @@ namespace StatRecoveryExercise.Models
         // This method would need to keep track of the file that was processed, which zip file it came from and when it was processed by inserting into the S3 Metadata.
         public async Task InsertFile(AmazonS3Client s3Client, string bucketName) // additional paramter would be an S3 Object to insert (PDF, file name etc)
         {
-            var objects = await s3Client.ListObjectsAsync(bucketName);
-
             await s3Client.PutObjectAsync(new Amazon.S3.Model.PutObjectRequest
             {
                 BucketName = bucketName,
