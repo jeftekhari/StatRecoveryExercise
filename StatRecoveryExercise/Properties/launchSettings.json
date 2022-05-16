@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "StatRecoveryExercise": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "AWS_PROFILE": "dotnet-tutorials",
+        " AWS_REGION": "us-west-2"
+      }
+    }
+  }
+}
